@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "5 * * * *"
+    - cron: "*/5 * * * *"
 name: Update Repo
 jobs:
   statsLoader:
@@ -22,3 +22,4 @@ jobs:
           project_id: ${{ secrets.project_id }}
           token_uri: ${{ secrets.token_uri }}
           type: ${{ secrets.type }}
+          FOO: ${{ secrets.FOO }}
