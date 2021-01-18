@@ -1,5 +1,6 @@
 on:
   workflow_dispatch:
+name: Upload to Firebase (manual)
 jobs:
   statsPoller:
     name: Stats Poller
