@@ -20,7 +20,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
       - name: Deploy Production
         uses: amondnet/vercel-action@v19
         id: vercel-action-production
@@ -29,5 +29,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
