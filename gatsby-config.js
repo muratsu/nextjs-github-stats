@@ -1,16 +1,16 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Node.js (TypeScript) API',
+    title: 'Next.js stats',
+    source: 'https://github.com/muratsu/nextjs-github-stats',
+    repoNameWithOwner: 'vercel/next.js'
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-theme-github-stats`,
       options: {
-        name: 'Gatsby + Node.js (TypeScript) API',
-        short_name: 'Gatsby + Node.js (TypeScript)',
-        start_url: '/',
-        icon: 'src/images/gatsby-icon.png',
+        dataPath: path.join(__dirname, `src`, `data`),
       },
     },
   ],
