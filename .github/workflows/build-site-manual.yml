@@ -11,19 +11,9 @@ jobs:
         run: |
           yarn
           yarn build
-      - name: Deploy staging
-        uses: amondnet/vercel-action@v19
-        id: vercel-action-staging
-        if: github.event_name == 'pull_request'
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
       - name: Deploy Production
         uses: amondnet/vercel-action@v19
         id: vercel-action-production
-        if: github.event_name == 'push'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
