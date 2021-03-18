@@ -1,23 +1,23 @@
-on:
-  schedule:
-    - cron: "10 * * * *"
-name: Build Site
-jobs:
-  SiteBuilder:
-    name: Site Builder
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Build Site
-        run: |
-          yarn
-          yarn build
-      - name: Deploy Production
-        uses: amondnet/vercel-action@v19
-        id: vercel-action-production
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+# on:
+#   schedule:
+#     - cron: "10 * * * *"
+# name: Build Site
+# jobs:
+#   SiteBuilder:
+#     name: Site Builder
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@master
+#       - name: Build Site
+#         run: |
+#           yarn
+#           yarn build
+#       - name: Deploy Production
+#         uses: amondnet/vercel-action@v19
+#         id: vercel-action-production
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+#           vercel-org-id: ${{ secrets.ORG_ID }}
+#           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+#           vercel-args: '--prod'
